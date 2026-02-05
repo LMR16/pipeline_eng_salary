@@ -1,7 +1,7 @@
 
 -- Creating new table
 
--- DROP TABLE IF EXISTS salarios_engenharia;
+DROP TABLE IF EXISTS salarios_engenharia;
 
 CREATE TABLE IF NOT EXISTS salarios_engenharia (
     id SERIAL PRIMARY KEY,

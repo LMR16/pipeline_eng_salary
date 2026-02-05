@@ -1,5 +1,17 @@
-# .gitignore
+# Segredos
 db/password.txt
+.env
+
+# Python
 __pycache__/
-*.csv
+*.pyc
 venv/
+.pytest_cache/
+
+# Dados
+*.csv
+data/
+
+# Sistema Operacional / IDE
+.DS_Store
+.vscode/

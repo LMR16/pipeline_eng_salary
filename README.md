@@ -1,17 +1,17 @@
-### Building and running your application
+# Pipeline de Engenharia de Dados - Salários
 
-When you're ready, start your application by running:
-`docker compose up --build`.
+Este projeto constrói um pipeline ETL automatizado para analisar salários de engenharia de dados usando Docker e Python.
 
-### Deploying your application to the cloud
+## 🏗️ Arquitetura
 
-First, build your image, e.g.: `docker build -t myapp .`.
-If your cloud uses a different CPU architecture than your development
-machine (e.g., you are on a Mac M1 and your cloud provider is amd64),
-you'll want to build the image for that platform, e.g.:
-`docker build --platform=linux/amd64 -t myapp .`.
+1. **Infraestrutura:** Docker Compose com PostgreSQL 16 (Alpine).
+2. **Ingestão:** Script Python que baixa dados do Kaggle e carrega no banco.
+3. **Armazenamento:** PostgreSQL com modelagem de dados tipada e persistência via volumes.
 
-Then, push it to your registry, e.g. `docker push myregistry.com/myapp`.
+## 🚀 Como rodar
 
-Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
-docs for more detail on building and pushing.
+1. Clone o repositório.
+2. Crie o arquivo de senha:
+   ```bash
+   mkdir db
+   echo "sua_senha_secreta" > db/password.txt

@@ -37,7 +37,6 @@ Este projeto constrói um pipeline ETL para analisar salários de engenharia de 
    ```
 
 4. Suba o banco de dados e rode o pipeline:
-   # Sobe o banco Postgres
    ```bash
    docker compose up -d
    python etl_pipeline.py

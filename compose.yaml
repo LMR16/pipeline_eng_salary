@@ -9,8 +9,8 @@ services:
     secrets:
       - db-password
     volumes:
-      - db-data:/var/lib/postgresql/data ## NO SISTEMA LOCAL (INVISÍVEL) : NO CONTAINER
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      #- db-data:/var/lib/postgresql/data ## [NO SISTEMA LOCAL (INVISÍVEL) : NO CONTAINER] (Comentado para evitar persistencia dos dados)
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql ## Mapeia o arquivo init do sql ao container
     environment:
       - POSTGRES_DB=example
       - POSTGRES_USER=postgres_pipeline  ## Variável de ambiente, blank = postgres
@@ -22,8 +22,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-volumes:
-  db-data:
+# volumes: ## Comentado para evitar persistencia dos dados
+#   db-data:
 secrets:
   db-password:
     file: db/password.txt
